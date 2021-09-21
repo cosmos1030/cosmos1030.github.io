@@ -1,8 +1,20 @@
 ---
 layout: post
-title: TIL test
+title: TIL2
 date: 2021-09-22
 category: TIL
 ---
-# markdown is 어려ㅇ
+# 2021.9.22
+
+
+
+### 오늘 한 일
+
+* jekyll server 구동 문제를 해결했다. [ref](https://theorydb.github.io/envops/2019/05/03/envops-blog-github-pages-jekyll/), [webrick 수동 추가](https://junho85.pe.kr/1850)
+
+
+
+### 내일 할 일
+
+* 
 

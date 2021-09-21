@@ -1,13 +1,25 @@
 ---
 layout: post
-title: TIL test
+title: TIL1
 date: 2021-09-21
 category: TIL
 ---
-# post-sample
-> Hello!
+# 2021.9.21
+오늘부터 TIL(Today I Learned)를 시작한다
 
-This is code
-```ruby
-print 'hello world'
-```
+추석이라 많은 것을 하지 못했다
+
+### 오늘 한 일
+
+* jekyll 템플릿을 이용해 블로그를 만든 후 초기 설정 완료했다
+
+* 이 블로그를 github를 이용해 배포했다
+
+* ruby를 이용해 jekyll local server를 구동하고자 했으나 실패했다(거의 6시간 동안 생고생 했는데 실패했음...)
+
+
+
+### 내일 할 일
+
+* jekyll server 구동 문제 해결
+
