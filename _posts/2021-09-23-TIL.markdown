@@ -1,0 +1,19 @@
+---
+layout: post
+title: TIL3
+date: 2021-09-23
+category: TIL
+---
+# 2021.9.22
+
+
+
+### 오늘 한 일
+
+* [조코딩 비트코인 투자 자동화 강의](https://www.youtube.com/watch?v=5vofEMqMyGk) 수강
+* 조금 더 유지 보수가 간편하게 코드 수정
+
+### 내일 할 일
+
+* 
+
