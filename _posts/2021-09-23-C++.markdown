@@ -2,7 +2,7 @@
 layout: post
 title: namespace
 date: 2021-09-23
-category: C++
+category: 열혈 C++(윤성우)
 ---
 # namespace
 
