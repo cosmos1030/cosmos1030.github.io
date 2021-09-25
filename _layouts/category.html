@@ -1,4 +1,9 @@
 ---
-layout: default
+layout: page
 ---
-{%- include category.html -%}
+
+{{ content }}
+
+<div class="entries-{{ page.entries_layout | default: 'list' }}">
+  {% include posts-category.html taxonomy=page.taxonomy %}
+</div>
