@@ -1,0 +1,25 @@
+---
+layout: post
+title: TIL2
+date: 2021-09-22
+category: TIL
+---
+# 2021.9.22
+
+
+
+### 오늘 한 일
+
+* Jekyll server 구동 문제를 해결했다. [ref](https://theorydb.github.io/envops/2019/05/03/envops-blog-github-pages-jekyll/), [webrick 수동 추가](https://junho85.pe.kr/1850)
+* 노마드 코더 [크롬 클론코딩 강의]([https://nomadcoders.co/javascript-for-beginners/lectures/2896) 3.5, 3.6강 수강
+* 백준 알고리즘 [2941번](https://www.acmicpc.net/problem/2941) 풀이
+* 열혈 C++(윤성우) namespace 전까지 공부
+
+
+
+### 내일 할 일
+
+* [조코딩 비트코인 투자 자동화 강의](https://www.youtube.com/watch?v=5vofEMqMyGk) 수강 후 실습
+* 열혈 C++(윤성우) 공부
+* 노마드 코더 [크롬 클론코딩 강의]([https://nomadcoders.co/javascript-for-beginners/lectures/2896) 수강
+

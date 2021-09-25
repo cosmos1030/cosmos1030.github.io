@@ -1,0 +1,29 @@
+---
+layout: post
+title: TIL1
+date: 2021-09-21
+category: TIL
+---
+# 2021.9.21
+오늘부터 TIL(Today I Learned)를 시작한다
+
+[초보몽키의 개발공부로그](https://wayhome25.github.io/)에서 많은 자극을 받았다
+
+추석이라 많은 것을 하지는 못했다
+
+
+
+### 오늘 한 일
+
+* Jekyll 템플릿을 이용해 블로그를 만든 후 초기 설정 완료했다
+
+* 이 블로그를 Github를 이용해 배포했다
+
+* Ruby를 이용해 Jekyll local server를 구동하고자 했으나 실패했다(거의 6시간 동안 생고생 했는데 실패했음...)
+
+
+
+### 내일 할 일
+
+* Jekyll server 구동 문제 해결
+

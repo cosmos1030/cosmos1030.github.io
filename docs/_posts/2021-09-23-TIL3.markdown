@@ -1,0 +1,25 @@
+---
+layout: post
+title: TIL3
+date: 2021-09-23
+category: TIL
+---
+# 2021.9.23
+
+쓸데없이 낮잠을 너무 많이 잤다
+
+줄이는게 좋을거 같다
+
+
+
+### 오늘 한 일
+
+* [조코딩 비트코인 투자 자동화 강의](https://www.youtube.com/watch?v=5vofEMqMyGk) 수강
+* 조금 더 유지 보수가 간편하게 코드 수정
+* 열혈 C++ namespace 공부
+* 노마드 코더 [크롬 클론코딩 강의]([https://nomadcoders.co/javascript-for-beginners/lectures/2896) JS, CSS 분리 강의 수강
+
+### 내일 할 일
+
+* 노마드 코더 [크롬 클론코딩 강의]([https://nomadcoders.co/javascript-for-beginners/lectures/2896) 수강
+* 열혈 C++ 공부 후 블로그에 정리
