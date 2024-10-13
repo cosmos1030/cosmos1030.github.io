@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* html과 body의 높이를 100%로 설정 */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* body를 flexbox로 설정 */
+    min-height: 100vh; /* 최소 높이를 화면 전체 높이로 설정 */
+}
+
+header {
+    background-color: #2c3e50;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header .logo h1 {
+    color: white;
+    padding-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    padding: 2rem 0;
+    text-align: center;
+    flex: 1; /* 섹션이 남은 공간을 차지하도록 설정 */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+ul {
+    list-style: disc inside;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* 푸터를 페이지 하단으로 밀어내기 */
+}
+
+/* 추가된 CSS */
+.coursework {
+    font-size: 0.9rem; /* 글씨 크기를 약간 작게 설정 */
+    color: #555; /* 텍스트 색상을 약간 연하게 */
+}
+
+/* a 태그의 기본 스타일을 없앱니다 */
+a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상 상속 (보라색 링크 제거) */
+}
+
+a:hover {
+    color: #555; /* 마우스를 올렸을 때 약간 다른 색상으로 변경 (선택 사항) */
+}
+
+/* Skills 텍스트 크기 조정 */
+.skills {
+    font-size: 0.9rem; /* 글씨 크기를 약간 작게 설정 */
+    color: #555; /* 텍스트 색상을 약간 연하게 */
+}
