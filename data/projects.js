@@ -24,5 +24,5 @@ const siteProjects = [
         links: [
             { type: "Code", url: "https://github.com/cosmos1030/bookchat" }
         ]
-    }
+    },
 ];

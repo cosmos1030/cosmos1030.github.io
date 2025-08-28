@@ -168,6 +168,7 @@ class ContentManager {
                 <div class="publication-status">${pub.status}</div>
                 <h3>${pub.title}</h3>
                 <p class="authors">${pub.authors}</p>
+                ${pub.note ? `<p class="note">${pub.note}</p>` : ''}
                 ${pub.links.length > 0 ? `
                     <div class="publication-links">
                         ${pub.links.map(link => `<a href="${link.url}" target="_blank">${link.type}</a>`).join('')}

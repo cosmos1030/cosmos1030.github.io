@@ -535,8 +535,16 @@ section {
 .authors {
     color: var(--text-secondary);
     font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     line-height: 1.5;
+}
+
+.note {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
 }
 
 .publication-links {

@@ -10,7 +10,7 @@ const sitePersonalInfo = {
     },
     
     about: [
-        "I'm a Computer Science student at GIST (Gwangju Institute of Science and Technology) with a passion for AI research, particularly in causal inference and reinforcement learning. I was a visiting student at UC Berkeley during the summer of 2024 and the spring of 2025, expanding my knowledge in advanced machine learning topics.",
+        "I'm an undergrad Computer Science student at GIST (Gwangju Institute of Science and Technology) with a passion for AI research, particularly in causal inference and reinforcement learning. I was a visiting student at UC Berkeley during the summer of 2024 and the spring of 2025, expanding my knowledge in advanced machine learning topics.",
         "My research interests span from theoretical aspects of neural networks to practical applications especially in robotics domain. I've been fortunate to work on diverse projects, from drug affinity prediction to photovoltaic power forecasting."
     ],
     

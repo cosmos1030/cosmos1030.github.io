@@ -2,7 +2,7 @@ const sitePublications = [
     {
         status: "RLC Workshop 2025",
         title: "Causal-Paced Deep Reinforcement Learning",
-        authors: "G. Cho, J. Im, S. Kim, <strong>D. Kim</strong>",
+        authors: "G. Cho, J. Im, <strong>D. Kim</strong>, S. Kim",
         links: [
             { type: "Paper", url: "https://arxiv.org/pdf/2507.02910" },
             { type: "Code", url: "https://github.com/Cho-Geonwoo/CP-DRL" }
@@ -45,7 +45,8 @@ const sitePublications = [
     {
         status: "In Preparation",
         title: "Understanding Forgetting in VLMs: A Comparative Study of Supervised Fine-Tuning and Reinforcement Learning",
-        authors: "Ziyang Wu*, <strong>D. Kim</strong>*, Yi Ma",
+        authors: "Ziyang Wu*, D. Kim*, Yi Ma",
+        note: "* Equally contributed",
         links: [],
         type: "in-prep"
     }
