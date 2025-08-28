@@ -3,48 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doyoon Kim - AI Research Portfolio</title>
+    <title>Doyoon Kim - Personal Homepage</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1><a href="index.html">Doyoon Kim</a></h1>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Doyoon Kim</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    </nav>
 
-    <section id="about">
-        <div class="container">
-            <br><br>
-            <h2>About Me</h2>
-            <p>I am Doyoon Kim, a passionate AI researcher and software developer currently pursuing my Bachelor's degree at GIST. I am committed to advancing AI technologies through innovative research in machine learning, robotics, and network optimization.</p>
-            <br>
-            <h2>Education</h2>
-            <h3>Gwangju Institute of Science and Technology (GIST)</h3>
-            <p><strong>Bachelor of Electrical Engineering and Computer Science</strong> (Mar. 2020 – Present)</p>
-            <p><strong>Relevant Coursework:</strong> <span class="coursework">Machine Learning and Deep Learning, Signal and Systems, Algorithms and Data Structures, Calculus, Linear Algebra</span></p>
-            <br>
-            <h3>University of California, Berkeley</h3>
-            <p><strong>Summer Session Visiting Student</strong> (June 2024 – August 2024)</p>
-            <p><strong>Relevant Coursework:</strong> <span class="coursework">DATA C100: Principles and Techniques of Data Science (A+), CS188: Introduction to Artificial Intelligence (A+)</span></p>
-            <br><br>
-            <h2>Skills</h2>
-            <p><span class="skills">Python, R, C, C++, Javascript, Pandas, Pytorch, Django, FastAPI</span></p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Doyoon Kim</h1>
+            <p class="hero-subtitle">Loading...</p>
+            <p class="hero-description">Loading...</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#research" class="btn btn-outline">View Research</a>
+            </div>
+            <div class="social-links">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
         </div>
     </section>
 
-    <footer>
-        <p>© 2024 Doyoon Kim - AI Research Portfolio</p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <!-- Content loaded dynamically -->
+                </div>
+                <div class="education-card">
+                    <!-- Content loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title">Research Experience</h2>
+            <div class="timeline">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="publications-grid">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p>I'm always interested in discussing research opportunities, collaborations, or just connecting with fellow researchers and developers.</p>
+                <div class="contact-info">
+                    <!-- Content loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Doyoon Kim. All rights reserved.</p>
+        </div>
     </footer>
 
+    <!-- Load content management system -->
+    <script src="data/content-manager.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
