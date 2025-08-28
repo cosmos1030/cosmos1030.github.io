@@ -69,12 +69,10 @@ class ContentManager {
         
         const { name, title, description, contact } = this.data.personal;
         
-        // Hero section
-        const heroTitle = document.querySelector('.hero-title');
+        // Hero section (title handled by typing animation)
         const heroSubtitle = document.querySelector('.hero-subtitle');
         const heroDescription = document.querySelector('.hero-description');
         
-        if (heroTitle) heroTitle.textContent = name;
         if (heroSubtitle) heroSubtitle.textContent = title;
         if (heroDescription) heroDescription.textContent = description;
 
@@ -242,6 +240,6 @@ class ContentManager {
 
 // Initialize content manager when DOM is loaded
 document.addEventListener('DOMContentLoaded', async () => {
-    const contentManager = new ContentManager();
-    await contentManager.init();
+    window.contentManager = new ContentManager();
+    await window.contentManager.init();
 });

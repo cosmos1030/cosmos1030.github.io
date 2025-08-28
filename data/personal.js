@@ -1,7 +1,7 @@
 const sitePersonalInfo = {
     name: "Doyoon Kim",
     title: "AI Researcher & Computer Science Student",
-    description: "Passionate about causal inference in deep learning, reinforcement learning and developing AI systems that make a meaningful impact.",
+    description: "Passionate about developing a novel approaches in deep learning and reinforcement learning using mathematical insights.",
     
     contact: {
         email: "dykim6208@gm.gist.ac.kr",

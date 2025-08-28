@@ -128,11 +128,33 @@ function typeWriter(element, text, delay = 100) {
 }
 
 // Initialize typing animation when page loads
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
     const heroTitle = document.querySelector('.hero-title');
-    const originalText = heroTitle.textContent;
+    
+    // Wait for content manager to load data
+    let attempts = 0;
+    const maxAttempts = 50; // 5 seconds max wait
+    
+    const waitForData = async () => {
+        return new Promise((resolve) => {
+            const checkData = () => {
+                if (window.contentManager?.data?.personal?.name || attempts >= maxAttempts) {
+                    resolve();
+                } else {
+                    attempts++;
+                    setTimeout(checkData, 100);
+                }
+            };
+            checkData();
+        });
+    };
+    
+    await waitForData();
+    
+    const nameToType = window.contentManager?.data?.personal?.name || 'Doyoon Kim';
+    
     setTimeout(() => {
-        typeWriter(heroTitle, originalText, 100);
+        typeWriter(heroTitle, nameToType, 100);
     }, 500);
 });
 
