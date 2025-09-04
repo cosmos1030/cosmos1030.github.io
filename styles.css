@@ -154,6 +154,26 @@ body {
     z-index: 2;
 }
 
+.hero-profile {
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-xl);
+}
+
 .hero-title {
     font-size: 4rem;
     font-weight: 700;
@@ -854,6 +874,11 @@ section {
         gap: 1rem;
     }
 
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
     .btn {
         width: 100%;
         max-width: 250px;
@@ -917,6 +942,11 @@ section {
 
     .section-title {
         font-size: 1.75rem;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
     }
 
     .timeline-content,
