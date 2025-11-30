@@ -110,7 +110,7 @@ class ContentManager {
                 <div class="education-item">
                     <h4>${edu.institution}</h4>
                     <p>${edu.degree}</p>
-                    <p>${edu.gpa}</p>
+                    ${edu.gpa ? `<p>${edu.gpa}</p>` : ''}
                     <span class="date">${edu.period}</span>
                 </div>
             `).join('');
