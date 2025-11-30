@@ -1,6 +1,6 @@
 const sitePublications = [
     {
-        status: "Under Review",
+        status: "preprint",
         title: "Annealing bridges Offline and Online RL",
         authors: "Geonwoo Cho, Jaegyun Im, <strong>Doyoon Kim</strong>, Lexin Li",
         links: [],
@@ -42,17 +42,17 @@ const sitePublications = [
         links: [],
         type: "in-prep"
     },
-    {
-        status: "In Preparation",
-        title: "Low rank behavior of Neural Networks",
-        authors: "Enoch Yiu, <strong>Doyoon Kim</strong>, Alex Shkolnik, Lisa Goldberg",
-        links: [],
-        type: "in-prep"
-    },
+    // {
+    //     status: "In Preparation",
+    //     title: "Low rank behavior of Neural Networks",
+    //     authors: "Enoch Yiu, <strong>Doyoon Kim</strong>, Alex Shkolnik, Lisa Goldberg",
+    //     links: [],
+    //     type: "in-prep"
+    // },
     {
         status: "In Preparation",
         title: "Understanding Forgetting in VLMs: A Comparative Study of Supervised Fine-Tuning and Reinforcement Learning",
-        authors: "Ziyang Wu*, Doyoon Kim*, Yi Ma",
+        authors: "Ziyang Wu*, <strong>Doyoon Kim</strong>*, Yi Ma",
         note: "* Equally contributed",
         links: [],
         type: "in-prep"

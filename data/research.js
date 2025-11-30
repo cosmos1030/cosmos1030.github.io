@@ -1,15 +1,15 @@
 const siteResearchExperience = [
     {
-        period: "Jun. 2025 - Present",
+        period: "Jun. 2025 - Oct. 2025",
         institution: "GIST Data Science Lab",
         advisor: {
             name: "Prof. Sundong Kim",
             url: "https://sundong.kim/"
         },
-        description: "Focused on causal inference in reinforcement learning, from curriculum design via causal misalignment (CP-DRL) to stabilizing credit assignment methods (e.g., HCA, COCOA) for real-world applicability."
+        description: "Focused on reinforcement learning, from curriculum design via causal misalignment (CP-DRL) to stabilizing credit assignment methods (e.g., HCA, COCOA) for real-world applicability."
     },
     {
-        period: "Mar. 2025 - Present",
+        period: "Mar. 2025 - Sep. 2025",
         institution: "UC Berkeley Risk Seminar",
         advisors: [
             {
