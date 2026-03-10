@@ -36,7 +36,7 @@ const sitePublications = [
             {type: "Paper", url: "https://drive.google.com/file/d/1RykXD3x6ErWWNg3byQ4VfdcYDLdpUTxn/view?usp=sharing"}
         ],
         type: "published"
-    }
+    },
     {
         status: "IEEE Access 2025",
         title: "Transfer Learning for Photovoltaic Power Forecasting with a Large Dataset and Model",
