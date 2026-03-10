@@ -1,4 +1,13 @@
 const siteResearchExperience = [
+        {
+        period: "Jun. 2026 - Present.",
+        institution: "POSTECH Lee Optimization Group",
+        advisor: {
+            name: "Prof. Namhoon Lee",
+            url: "https://namhoonlee.github.io/"
+        },
+        description: "Focusing on model compression, especially pruning and distillation for LLMs."
+    },
     {
         period: "Jun. 2025 - Oct. 2025",
         institution: "GIST Data Science Lab",
