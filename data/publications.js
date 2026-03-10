@@ -3,7 +3,9 @@ const sitePublications = [
         status: "preprint",
         title: "Annealing bridges Offline and Online RL",
         authors: "Geonwoo Cho, Jaegyun Im, <strong>Doyoon Kim</strong>, Lexin Li",
-        links: [],
+        links: [
+            { type: "Paper", url: "https://drive.google.com/file/d/1LaLq0klL3pM1l0im9vhwpP8FOTQTZWme/view?usp=sharing" }
+        ],
         type: "published"
     },
     {
@@ -19,12 +21,22 @@ const sitePublications = [
     {
         status: "IEEE Lanman Accepted",
         title: "Framework for Vendor Independent SOHO Cloud Management System for Integrating AI Services",
-        authors: "Suman Pandey, <strong>Doyoon Kim</strong>",
+        authors: "Suman Pandey, <strong>Doyoon Kim</strong>, Pawan K. Tiwari",
         links: [
             { type: "Paper", url: "https://drive.google.com/file/d/1p4GqVA6mgWSBXr6qR_U2peYn031eQPu8/view?usp=drive_link" }
         ],
         type: "published"
     },
+    {
+        status: "Bachelor's Thesis",
+        title: "Understanding Forgetting in VLMs: A Comparative Study of Supervised Fine-Tuning and Reinforcement Learning",
+        authors: "Doyoon Kim",
+        // note: "* Equally contributed",
+        links: [
+            {type: "Paper", url: "https://drive.google.com/file/d/1RykXD3x6ErWWNg3byQ4VfdcYDLdpUTxn/view?usp=sharing"}
+        ],
+        type: "published"
+    }
     {
         status: "IEEE Access 2025",
         title: "Transfer Learning for Photovoltaic Power Forecasting with a Large Dataset and Model",
@@ -38,7 +50,7 @@ const sitePublications = [
     {
         status: "In Preparation",
         title: "Mamba-VLA: Layerwise Distillation for Mamba-based Vision-Language-Action Models",
-        authors: "Seongho Park, <strong>Doyoon Kim</strong>, Junhyeong Lee, Kyubin Lee",
+        authors: "Seongho Park, Taewon Kim, Junhyeong Lee, <strong>Doyoon Kim</strong>, Kyubin Lee",
         links: [],
         type: "in-prep"
     },
@@ -49,12 +61,5 @@ const sitePublications = [
     //     links: [],
     //     type: "in-prep"
     // },
-    {
-        status: "In Preparation",
-        title: "Understanding Forgetting in VLMs: A Comparative Study of Supervised Fine-Tuning and Reinforcement Learning",
-        authors: "Ziyang Wu*, <strong>Doyoon Kim</strong>*, Yi Ma",
-        note: "* Equally contributed",
-        links: [],
-        type: "in-prep"
-    }
+
 ];
