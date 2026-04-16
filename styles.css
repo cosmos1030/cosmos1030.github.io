@@ -639,6 +639,13 @@ section {
     margin-bottom: 0.5rem;
 }
 
+.teaching-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
 .teaching-content ul {
     list-style: none;
     padding: 0;

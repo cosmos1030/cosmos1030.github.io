@@ -208,6 +208,7 @@ class ContentManager {
                 <div class="teaching-period">${item.period}</div>
                 <div class="teaching-content">
                     <h3>${item.title}</h3>
+                    ${item.subtitle ? `<p class="teaching-subtitle">${item.subtitle}</p>` : ''}
                     ${item.topics ? `<ul>${item.topics.map(t => `<li>${t}</li>`).join('')}</ul>` : ''}
                 </div>
             </div>
