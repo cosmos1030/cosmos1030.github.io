@@ -37,5 +37,13 @@ const sitePersonalInfo = {
     skills: {
         "AI & Machine Learning": ["Python", "PyTorch", "Hugging Face", "WanDB", "Langchain", "R"],
         "Development & Systems": ["Linux", "Docker", "FastAPI", "Django"]
-    }
+    },
+
+    teaching: [
+        {
+            period: "2026-S",
+            title: "Teaching Assistant, POSCO AI·BigData Academy",
+            topics: ["Machine Learning and Deep Learning"]
+        }
+    ]
 };

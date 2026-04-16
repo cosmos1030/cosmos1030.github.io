@@ -54,6 +54,7 @@ class ContentManager {
         this.populateResearch();
         this.populatePublications();
         this.populateProjects();
+        this.populateTeaching();
         this.populateSkills();
         this.populateContact();
     }
@@ -195,6 +196,24 @@ class ContentManager {
         `).join('');
 
         projectsGrid.innerHTML = projectsHTML;
+    }
+
+    // Populate teaching section
+    populateTeaching() {
+        const teachingList = document.querySelector('.teaching-list');
+        if (!teachingList || !this.data.personal.teaching) return;
+
+        const teachingHTML = this.data.personal.teaching.map(item => `
+            <div class="teaching-item">
+                <div class="teaching-period">${item.period}</div>
+                <div class="teaching-content">
+                    <h3>${item.title}</h3>
+                    ${item.topics ? `<ul>${item.topics.map(t => `<li>${t}</li>`).join('')}</ul>` : ''}
+                </div>
+            </div>
+        `).join('');
+
+        teachingList.innerHTML = teachingHTML;
     }
 
     // Populate skills section
