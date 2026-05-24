@@ -1,11 +1,9 @@
 const sitePublications = [
     {
-        status: "preprint",
-        title: "Annealing bridges Offline and Online RL",
+        status: "NeurIPS 2026 (Under Review)",
+        title: "ANCHOR: KL-Anchored Adaptation for Stable Offline-to-Online RL",
         authors: "Geonwoo Cho, Jaegyun Im, <strong>Doyoon Kim</strong>, Lexin Li",
-        links: [
-            { type: "Paper", url: "https://drive.google.com/file/d/1LaLq0klL3pM1l0im9vhwpP8FOTQTZWme/view?usp=sharing" }
-        ],
+        links: [],
         type: "published"
     },
     {
