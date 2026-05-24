@@ -14,11 +14,11 @@ class ContentManager {
     async loadAllData() {
         try {
             // Load data using fetch method
-            this.data.personal = await this.loadData('data/personal.js');
-            this.data.research = await this.loadData('data/research.js');
-            this.data.publications = await this.loadData('data/publications.js');
-            this.data.projects = await this.loadData('data/projects.js');
-            this.data.teaching = await this.loadData('data/teaching.js');
+            this.data.personal = await this.loadData('data/personal.js?v=2');
+            this.data.research = await this.loadData('data/research.js?v=2');
+            this.data.publications = await this.loadData('data/publications.js?v=2');
+            this.data.projects = await this.loadData('data/projects.js?v=2');
+            this.data.teaching = await this.loadData('data/teaching.js?v=2');
             
             console.log('All data loaded successfully:', this.data);
         } catch (error) {
