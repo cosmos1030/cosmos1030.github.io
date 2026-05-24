@@ -1,11 +1,5 @@
 const sitePublications = [
-    {
-        status: "NeurIPS 2026 (Under Review)",
-        title: "ANCHOR: KL-Anchored Adaptation for Stable Offline-to-Online RL",
-        authors: "Geonwoo Cho, Jaegyun Im, <strong>Doyoon Kim</strong>, Lexin Li",
-        links: [],
-        type: "published"
-    },
+
     {
         status: "RLC Workshop 2025",
         title: "Causal-Paced Deep Reinforcement Learning",
@@ -49,6 +43,13 @@ const sitePublications = [
         status: "In Preparation",
         title: "Mamba-VLA: Layerwise Distillation for Mamba-based Vision-Language-Action Models",
         authors: "Seongho Park, Taewon Kim, Junhyeong Lee, <strong>Doyoon Kim</strong>, Kyubin Lee",
+        links: [],
+        type: "in-prep"
+    },
+    {
+        status: "Under Review (NeurIPS 2026)",
+        title: "ANCHOR: KL-Anchored Adaptation for Stable Offline-to-Online RL",
+        authors: "Geonwoo Cho, Jaegyun Im, <strong>Doyoon Kim</strong>, Lexin Li",
         links: [],
         type: "in-prep"
     },
