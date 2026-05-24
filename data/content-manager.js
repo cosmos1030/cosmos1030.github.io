@@ -18,6 +18,7 @@ class ContentManager {
             this.data.research = await this.loadData('data/research.js');
             this.data.publications = await this.loadData('data/publications.js');
             this.data.projects = await this.loadData('data/projects.js');
+            this.data.teaching = await this.loadData('data/teaching.js');
             
             console.log('All data loaded successfully:', this.data);
         } catch (error) {
@@ -36,7 +37,7 @@ class ContentManager {
             const scriptText = await response.text();
             
             // Execute the script in a safe context
-            const scriptFunction = new Function(scriptText + '; return typeof sitePersonalInfo !== "undefined" ? sitePersonalInfo : typeof siteResearchExperience !== "undefined" ? siteResearchExperience : typeof sitePublications !== "undefined" ? sitePublications : siteProjects;');
+            const scriptFunction = new Function(scriptText + '; return typeof sitePersonalInfo !== "undefined" ? sitePersonalInfo : typeof siteResearchExperience !== "undefined" ? siteResearchExperience : typeof sitePublications !== "undefined" ? sitePublications : typeof siteTeaching !== "undefined" ? siteTeaching : siteProjects;');
             const data = scriptFunction();
             
             console.log(`Data from ${src}:`, data);
@@ -201,9 +202,9 @@ class ContentManager {
     // Populate teaching section
     populateTeaching() {
         const teachingList = document.querySelector('.teaching-list');
-        if (!teachingList || !this.data.personal.teaching) return;
+        if (!teachingList || !this.data.teaching) return;
 
-        const teachingHTML = this.data.personal.teaching.map(item => `
+        const teachingHTML = this.data.teaching.map(item => `
             <div class="teaching-item">
                 <div class="teaching-period">${item.period}</div>
                 <div class="teaching-content">

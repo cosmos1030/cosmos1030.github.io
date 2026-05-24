@@ -28,16 +28,16 @@ const sitePublications = [
         type: "published"
     },
     {
-        status: "Bachelor's Thesis",
-        title: "Understanding Forgetting in VLMs: A Comparative Study of Supervised Fine-Tuning and Reinforcement Learning",
-        authors: "Doyoon Kim",
-        // note: "* Equally contributed",
+        status: "ICML 2026 Workshop (CATS)",
+        title: "On-Policy Adaptation Mitigates Hyperparameter-Sensitive Forgetting in Vision-Language Models",
+        authors: "<strong>Doyoon Kim</strong>*, Ziyang Wu*, Jingfeng Yang, Yi Ma",
+        note: "* Equal contribution",
         links: [
-            {type: "Paper", url: "https://drive.google.com/file/d/1RykXD3x6ErWWNg3byQ4VfdcYDLdpUTxn/view?usp=sharing"}
+            { type: "Paper", url: "https://openreview.net/forum?id=hSugVMRCLK" }
         ],
         type: "published"
     },
-    {
+{
         status: "IEEE Access 2025",
         title: "Transfer Learning for Photovoltaic Power Forecasting with a Large Dataset and Model",
         authors: "Seongho Park, Sowon Choi, Donguk Yang, <strong>Doyoon Kim</strong>, Heesun No, Kyubin Lee",
