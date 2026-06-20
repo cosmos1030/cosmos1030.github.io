@@ -5,7 +5,7 @@ const siteNews = [
     },
     {
         date: "Feb. 2026",
-        content: 'Started M.S. in Artificial Intelligence at <strong>POSTECH</strong>. Joined the <a href="https://namhoonlee.github.io/">Lee Optimization Group</a> advised by Prof. Namhoon Lee.'
+        content: 'Started M.S. in Artificial Intelligence at <strong>POSTECH</strong>. Joined the <a href="https://opt.postech.ac.kr/">Lee Optimization Group</a> advised by <a href="https://namhoonlee.github.io/">Prof. Namhoon Lee</a>.'
     },
     {
         date: "Jul. 2025",

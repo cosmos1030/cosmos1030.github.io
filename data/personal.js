@@ -11,7 +11,7 @@ const sitePersonalInfo = {
     },
     
     about: [
-        "I'm a Master's student in Artificial Intelligence at POSTECH in Korea, with a passion for AI research. I was a visiting student at UC Berkeley during the summer of 2024 and the spring of 2025, expanding my knowledge of advanced machine learning.",
+        "Hi! I'm a Master's student in Artificial Intelligence at POSTECH in Korea, supervised by <a href=\"https://namhoonlee.github.io/\" target=\"_blank\">Prof. Namhoon Lee</a>.",
         "My research interests lie in AI model compression, like model pruning and distillation."
     ],
     

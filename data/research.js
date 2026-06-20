@@ -2,6 +2,7 @@ const siteResearchExperience = [
         {
         period: "Jun. 2026 - Present.",
         institution: "POSTECH Lee Optimization Group",
+        institutionUrl: "https://opt.postech.ac.kr/",
         advisor: {
             name: "Prof. Namhoon Lee",
             url: "https://namhoonlee.github.io/"

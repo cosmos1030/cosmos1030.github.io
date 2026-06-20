@@ -130,6 +130,9 @@ class ContentManager {
         if (!timeline || !this.data.research) return;
 
         const researchHTML = this.data.research.map(item => {
+            const institutionHTML = item.institutionUrl
+                ? `<a href="${item.institutionUrl}" target="_blank">${item.institution}</a>`
+                : item.institution;
             let advisorHTML = '';
             if (item.advisor) {
                 // Single advisor (old format)
@@ -146,7 +149,7 @@ class ContentManager {
                 <div class="timeline-item">
                     <div class="timeline-date">${item.period}</div>
                     <div class="timeline-content">
-                        <h3>${item.institution}</h3>
+                        <h3>${institutionHTML}</h3>
                         ${advisorHTML}
                         ${item.description ? `<p>${item.description}</p>` : ''}
                         ${item.projects ? `<ul>${item.projects.map(project => `<li>${project}</li>`).join('')}</ul>` : ''}
