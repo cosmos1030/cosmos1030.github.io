@@ -6,7 +6,8 @@ const sitePersonalInfo = {
     contact: {
         email: "doyoon.kim@postech.ac.kr",
         linkedin: "https://www.linkedin.com/in/doyoon-kim-4b2b1a283/",
-        github: "https://github.com/cosmos1030"
+        github: "https://github.com/cosmos1030",
+        scholar: "https://scholar.google.co.kr/citations?user=qFkUz_EAAAAJ&hl=ko"
     },
     
     about: [

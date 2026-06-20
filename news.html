@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 </head>
 <body>
     <header class="af-header">
@@ -35,11 +36,12 @@
     <script src="data/news.js"></script>
 
     <script>
-        const { email, linkedin, github } = sitePersonalInfo.contact;
+        const { email, linkedin, github, scholar } = sitePersonalInfo.contact;
         document.getElementById('af-social').innerHTML = [
             `<a href="mailto:${email}" aria-label="Email"><i class="fas fa-envelope"></i></a>`,
             `<a href="${github}" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>`,
             `<a href="${linkedin}" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>`,
+            `<a href="${scholar}" target="_blank" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>`,
         ].join('');
 
         document.getElementById('af-news').innerHTML = siteNews.map(n => `
