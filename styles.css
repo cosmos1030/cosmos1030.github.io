@@ -960,7 +960,7 @@ section {
 
 .af-photo {
     width: 260px;
-    aspect-ratio: 9 / 10;
+    aspect-ratio: 6 / 7;
     flex-shrink: 0;
     border-radius: 4px;
     overflow: hidden;
@@ -971,7 +971,7 @@ section {
     height: auto;
     display: block;
     border-radius: 4px;
-    transform: translateY(-16.6667%);
+    transform: translateY(-12.5%);
 }
 
 .af-bio p {
