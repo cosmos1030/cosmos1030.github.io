@@ -1,154 +1,132 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doyoon Kim - Personal Homepage</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="alternate icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css?v=4">
+    <title>Doyoon Kim</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css?v=8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Doyoon Kim</a>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#research" class="nav-link">Research</a>
-                <a href="#publications" class="nav-link">Publications</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <header class="af-header">
+        <div class="af-social" id="af-social"></div>
+        <nav class="af-nav">
+            <a href="index.html" class="af-active">About</a>
+            <a href="news.html">News</a>
+            <a href="publications.html">Publications</a>
+            <a href="blog/">Posts</a>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Doyoon Kim</h1>
-            <p class="hero-subtitle">AI Researcher majoring in Computer Science & minoring in Math</p>
-            <p class="hero-description">Passionate about developing novel approaches in deep learning and reinforcement learning using mathematical insights.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#research" class="btn btn-outline">View Research</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/doyoon-kim-4b2b1a283/" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/cosmos1030" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:dykim6208@gm.gist.ac.kr" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
+    <main class="af-main">
+        <div class="af-container">
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <!-- Content loaded dynamically -->
+            <!-- Profile -->
+            <div class="af-profile">
+                <div class="af-profile-text">
+                    <h1 class="af-name">Doyoon Kim</h1>
+                    <div class="af-bio" id="af-bio"></div>
                 </div>
-                <div class="education-card">
-                    <!-- Content loaded dynamically -->
+                <div class="af-photo">
+                    <img src="VISA_photo.JPG" alt="Doyoon Kim">
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Research Section -->
-    <section id="research" class="research">
-        <div class="container">
-            <h2 class="section-title">Research Experience</h2>
-            <div class="timeline">
-                <!-- Content loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="publications">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <div class="publications-grid">
-                <!-- Content loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <!-- Content loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Teaching Section -->
-    <section id="teaching" class="teaching">
-        <div class="container">
-            <h2 class="section-title">Teaching</h2>
-            <div class="teaching-list">
-                <!-- Content loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="skills-grid">
-                <!-- Content loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p>I'm always interested in discussing research opportunities, collaborations, or just connecting with fellow researchers and developers.</p>
-                <div class="contact-info">
-                    <!-- Content loaded dynamically -->
+            <!-- News -->
+            <section class="af-section">
+                <div class="af-section-header">
+                    <h2>News</h2>
+                    <a href="news.html" class="af-see-all">see all →</a>
                 </div>
-            </div>
-        </div>
-    </section>
+                <div id="af-news"></div>
+            </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Doyoon Kim. All rights reserved.</p>
-        </div>
-    </footer>
+            <!-- Publications -->
+            <section class="af-section">
+                <div class="af-section-header">
+                    <h2>Publications</h2>
+                    <a href="publications.html" class="af-see-all">see all →</a>
+                </div>
+                <div id="af-pubs"></div>
+            </section>
 
-    <!-- Load content management system -->
-    <script src="data/content-manager.js?v=4"></script>
-    <script src="script.js?v=2"></script>
+            <!-- Recent Posts -->
+            <section class="af-section">
+                <div class="af-section-header">
+                    <h2>Posts</h2>
+                    <a href="blog/" class="af-see-all">see all →</a>
+                </div>
+                <div id="af-recent-posts"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="data/personal.js?v=2"></script>
+    <script src="data/publications.js?v=2"></script>
+    <script src="data/news.js"></script>
+    <script src="data/posts.js"></script>
+
+    <script>
+        const p   = sitePersonalInfo;
+        const pub = sitePublications;
+        const { email, linkedin, github } = p.contact;
+
+        // Social links
+        document.getElementById('af-social').innerHTML = [
+            `<a href="mailto:${email}" aria-label="Email"><i class="fas fa-envelope"></i></a>`,
+            `<a href="${github}" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>`,
+            `<a href="${linkedin}" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>`,
+        ].join('');
+
+        // Bio
+        document.getElementById('af-bio').innerHTML =
+            p.about.map(para => `<p>${para}</p>`).join('') +
+            `<p>Feel free to reach me via <a href="mailto:${email}">${email}</a>.</p>`;
+
+        // News
+        document.getElementById('af-news').innerHTML = siteNews.map(n => `
+            <div class="af-news-item">
+                <div class="af-news-date">${n.date}</div>
+                <div class="af-news-text">${n.content}</div>
+            </div>`
+        ).join('');
+
+        // Selected publications (published only)
+        const selected = pub.filter(p => p.type === 'published');
+        document.getElementById('af-pubs').innerHTML = selected.map(p => {
+            const links = p.links.map(l =>
+                `<a href="${l.url}" target="_blank">${l.type}</a>`
+            ).join('');
+            return `
+                <div class="af-pub-item">
+                    <div class="af-pub-body">
+                        <span class="af-pub-title">${p.title}</span>
+                        <div class="af-pub-authors">${p.authors}${p.note ? ` <em style="color:#999">${p.note}</em>` : ''}</div>
+                        <div class="af-pub-venue">${p.status}</div>
+                        ${links ? `<div class="af-pub-links">${links}</div>` : ''}
+                    </div>
+                </div>`;
+        }).join('');
+
+        // Recent posts (latest 3)
+        const recent = [...sitePosts]
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, 3);
+        document.getElementById('af-recent-posts').innerHTML = recent.map(post => {
+            const dateStr = new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', {
+                year: 'numeric', month: 'short', day: 'numeric'
+            });
+            return `
+            <div class="af-news-item">
+                <div class="af-news-date">${dateStr}</div>
+                <div class="af-news-text"><a href="blog/post.html?slug=${post.slug}">${post.title}</a></div>
+            </div>`;
+        }).join('');
+    </script>
 </body>
 </html>

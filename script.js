@@ -154,7 +154,7 @@ window.addEventListener('load', async () => {
     const nameToType = window.contentManager?.data?.personal?.name || 'Doyoon Kim';
     
     setTimeout(() => {
-        typeWriter(heroTitle, nameToType, 100);
+        if (heroTitle) typeWriter(heroTitle, nameToType, 100);
     }, 500);
 });
 

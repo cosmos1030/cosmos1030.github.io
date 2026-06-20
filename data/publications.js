@@ -1,6 +1,16 @@
 const sitePublications = [
 
     {
+        status: "ICML 2026 Workshop (CATS)",
+        title: "On-Policy Adaptation Mitigates Hyperparameter-Sensitive Forgetting in Vision-Language Models",
+        authors: "<strong>Doyoon Kim</strong>*, Ziyang Wu*, Jingfeng Yang, Yi Ma",
+        note: "* Equal contribution",
+        links: [
+            { type: "Paper", url: "https://openreview.net/forum?id=hSugVMRCLK" }
+        ],
+        type: "published"
+    },
+    {
         status: "RLC Workshop 2025",
         title: "Causal-Paced Deep Reinforcement Learning",
         authors: "Geonwoo Cho, Jaegyun Im, <strong>Doyoon Kim</strong>, Sundong Kim",
@@ -11,31 +21,21 @@ const sitePublications = [
         type: "published"
     },
     {
-        status: "IEEE Lanman Accepted",
-        title: "Framework for Vendor Independent SOHO Cloud Management System for Integrating AI Services",
-        authors: "Suman Pandey, <strong>Doyoon Kim</strong>, Pawan K. Tiwari",
-        links: [
-            { type: "Paper", url: "https://drive.google.com/file/d/1p4GqVA6mgWSBXr6qR_U2peYn031eQPu8/view?usp=drive_link" }
-        ],
-        type: "published"
-    },
-    {
-        status: "ICML 2026 Workshop (CATS)",
-        title: "On-Policy Adaptation Mitigates Hyperparameter-Sensitive Forgetting in Vision-Language Models",
-        authors: "<strong>Doyoon Kim</strong>*, Ziyang Wu*, Jingfeng Yang, Yi Ma",
-        note: "* Equal contribution",
-        links: [
-            { type: "Paper", url: "https://openreview.net/forum?id=hSugVMRCLK" }
-        ],
-        type: "published"
-    },
-{
         status: "IEEE Access 2025",
         title: "Transfer Learning for Photovoltaic Power Forecasting with a Large Dataset and Model",
         authors: "Seongho Park, Sowon Choi, Donguk Yang, <strong>Doyoon Kim</strong>, Heesun No, Kyubin Lee",
         links: [
             { type: "Paper", url: "https://ieeexplore.ieee.org/document/11086606/keywords#keywords" },
             { type: "Code", url: "https://github.com/gist-ailab/transfer-learning-PV-forecasting" }
+        ],
+        type: "published"
+    },
+    {
+        status: "IEEE Lanman Accepted",
+        title: "Framework for Vendor Independent SOHO Cloud Management System for Integrating AI Services",
+        authors: "Suman Pandey, <strong>Doyoon Kim</strong>, Pawan K. Tiwari",
+        links: [
+            { type: "Paper", url: "https://drive.google.com/file/d/1p4GqVA6mgWSBXr6qR_U2peYn031eQPu8/view?usp=drive_link" }
         ],
         type: "published"
     },

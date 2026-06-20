@@ -1,56 +1,79 @@
-# Doyoon Kim - Personal Homepage
+# cosmos1030.github.io
 
-A modern, responsive personal website showcasing my research experience, publications, and projects in AI and Computer Science.
+Personal academic portfolio site for [Doyoon Kim](https://cosmos1030.github.io), M.S. student in AI at POSTECH. Built as a static site hosted on GitHub Pages — no build tools, no frameworks.
 
-## 🌟 Features
+## Structure
 
-- **Modern Design**: Clean, professional layout with smooth animations
-- **Responsive**: Optimized for all devices (desktop, tablet, mobile)
-- **Interactive**: Smooth scrolling, hover effects, and dynamic navigation
-- **Performance Optimized**: Fast loading with lazy loading and debounced events
-- **GitHub Pages Ready**: Static site ready for deployment
+```
+.
+├── index.html               # Main page (About, News, Publications)
+├── publications.html        # Full publications list
+├── styles.css               # All styles (al-folio-inspired af-* classes)
+├── blog/
+│   ├── index.html           # Posts listing page
+│   ├── post.html            # Post renderer (marked.js + KaTeX)
+│   └── posts/               # Markdown source files
+│       └── *.md
+├── data/
+│   ├── personal.js          # Name, contact, bio, education
+│   ├── publications.js      # Publications array
+│   ├── news.js              # News items
+│   └── posts.js             # Blog post registry (auto-generated)
+└── gen_posts.py             # Script to regenerate posts.js from .md front matter
+```
 
-## 🚀 Sections
+## Writing a Blog Post
 
-- **Hero**: Introduction with social links and call-to-action
-- **About**: Personal background and education
-- **Research**: Timeline of research experiences
-- **Publications**: Academic papers and conference submissions
-- **Projects**: Featured projects with demos and code links
-- **Skills**: Technical expertise in AI/ML and development
-- **Contact**: Ways to get in touch
+1. Create `blog/posts/your-slug.md` with front matter:
 
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic markup
-- **CSS3**: Modern styling with CSS Grid, Flexbox, and animations
-- **JavaScript**: Interactive features and smooth UX
-- **Font Awesome**: Icons for social links and contact
-- **Google Fonts**: Inter font family for clean typography
-
-## 📱 Mobile-First Design
-
-The website is built with a mobile-first approach, ensuring perfect display on:
-- Mobile phones (320px+)
-- Tablets (768px+)
-- Desktops (1024px+)
-
-## 🎨 Design Features
-
-- **Smooth Animations**: CSS transitions and JavaScript animations
-- **Parallax Effects**: Subtle parallax scrolling in hero section
-- **Progress Indicator**: Visual scroll progress at the top
-- **Active Navigation**: Dynamic highlighting of current section
-- **Hover Effects**: Interactive elements with smooth transitions
-
-## 🚀 Deployment on GitHub Pages
-
-This site is optimized for GitHub Pages deployment. Simply push to your repository and enable GitHub Pages in the settings.
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
+```markdown
+---
+title: Your Post Title
+date: 2026-06-20
+tags: [tag1, tag2]
+description: One-sentence summary shown in the post list.
 ---
 
-Built with ❤️ by Doyoon Kim
+Your content here. Supports **Markdown**, inline math $E = mc^2$, and display math:
+
+$$
+\nabla_\theta J(\theta) = \mathbb{E}_{\tau}\left[\sum_t \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot G_t\right]
+$$
+```
+
+2. Run the registry generator:
+
+```bash
+python gen_posts.py
+```
+
+That's it. `data/posts.js` is updated automatically and the post appears in the Posts page.
+
+## Updating Content
+
+All site content lives in `data/`:
+
+| File | What to edit |
+|---|---|
+| `data/personal.js` | Name, email, GitHub, LinkedIn, bio paragraphs |
+| `data/publications.js` | Add/reorder publications (most recent first) |
+| `data/news.js` | Add news items |
+
+## Local Development
+
+Open with VS Code Live Server. The workspace-level `.vscode/settings.json` sets the Live Server root to this folder so all navigation links resolve correctly:
+
+```json
+{ "liveServer.settings.root": "/cosmos1030.github.io" }
+```
+
+Then go to `http://127.0.0.1:5500/`.
+
+## Tech Stack
+
+- Pure HTML/CSS/JS — no build step
+- [marked.js](https://marked.js.org/) — Markdown rendering
+- [KaTeX](https://katex.org/) — Math rendering
+- [Font Awesome 6](https://fontawesome.com/) — Icons
+- [Inter](https://fonts.google.com/specimen/Inter) — Typography
+- GitHub Pages — Hosting

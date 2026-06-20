@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications — Doyoon Kim</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="af-header">
+        <div class="af-social" id="af-social"></div>
+        <nav class="af-nav">
+            <a href="index.html">About</a>
+            <a href="news.html">News</a>
+            <a href="publications.html" class="af-active">Publications</a>
+            <a href="blog/">Posts</a>
+        </nav>
+    </header>
+
+    <main class="af-main">
+        <div class="af-container">
+            <section class="af-section" style="margin-top:1rem">
+                <h2>Publications</h2>
+                <div id="af-pubs"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="data/personal.js?v=2"></script>
+    <script src="data/publications.js?v=2"></script>
+
+    <script>
+        const { email, linkedin, github } = sitePersonalInfo.contact;
+
+        document.getElementById('af-social').innerHTML = [
+            `<a href="mailto:${email}" aria-label="Email"><i class="fas fa-envelope"></i></a>`,
+            `<a href="${github}" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>`,
+            `<a href="${linkedin}" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>`,
+        ].join('');
+
+        const published = sitePublications.filter(p => p.type !== 'in-prep');
+        document.getElementById('af-pubs').innerHTML = published.map(p => {
+            const links = p.links.map(l =>
+                `<a href="${l.url}" target="_blank">${l.type}</a>`
+            ).join('');
+            return `
+                <div class="af-pub-item">
+                    <div class="af-pub-body">
+                        <span class="af-pub-title">${p.title}</span>
+                        <div class="af-pub-authors">${p.authors}${p.note ? ` <em style="color:#999">${p.note}</em>` : ''}</div>
+                        <div class="af-pub-venue">${p.status}</div>
+                        ${links ? `<div class="af-pub-links">${links}</div>` : ''}
+                    </div>
+                </div>`;
+        }).join('');
+    </script>
+</body>
+</html>

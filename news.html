@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News — Doyoon Kim</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="af-header">
+        <div class="af-social" id="af-social"></div>
+        <nav class="af-nav">
+            <a href="index.html">About</a>
+            <a href="news.html" class="af-active">News</a>
+            <a href="publications.html">Publications</a>
+            <a href="blog/">Posts</a>
+        </nav>
+    </header>
+
+    <main class="af-main">
+        <div class="af-container">
+            <section class="af-section" style="margin-top:1rem">
+                <h2>News</h2>
+                <div id="af-news"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="data/personal.js?v=2"></script>
+    <script src="data/news.js"></script>
+
+    <script>
+        const { email, linkedin, github } = sitePersonalInfo.contact;
+        document.getElementById('af-social').innerHTML = [
+            `<a href="mailto:${email}" aria-label="Email"><i class="fas fa-envelope"></i></a>`,
+            `<a href="${github}" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>`,
+            `<a href="${linkedin}" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>`,
+        ].join('');
+
+        document.getElementById('af-news').innerHTML = siteNews.map(n => `
+            <div class="af-news-item">
+                <div class="af-news-date">${n.date}</div>
+                <div class="af-news-text">${n.content}</div>
+            </div>`
+        ).join('');
+    </script>
+</body>
+</html>
