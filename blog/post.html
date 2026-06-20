@@ -136,11 +136,13 @@
                 const tags = Array.isArray(meta.tags)
                     ? meta.tags.map(t => `<span class="post-tag">${t}</span>`).join('')
                     : '';
+                const category = meta.category || 'Uncategorized';
 
                 const content = renderWithMath(body);
 
                 container.innerHTML = `
                     <div class="post-meta">
+                        <a href="index.html?category=${encodeURIComponent(category)}" class="post-category">${category}</a>
                         <div class="post-tags">${tags}</div>
                         <h1>${meta.title || slug}</h1>
                         <span class="post-date">${date}</span>

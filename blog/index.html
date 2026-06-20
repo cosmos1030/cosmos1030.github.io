@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="blog.css?v=2">
 </head>
 <body>
     <header class="af-header">
@@ -27,6 +28,7 @@
         <div class="af-container">
             <section class="af-section" style="margin-top:1rem">
                 <h2>Posts</h2>
+                <div class="post-category-filter" id="category-filter" aria-label="Filter posts by category"></div>
                 <div id="posts-list"></div>
             </section>
         </div>
@@ -46,12 +48,38 @@
         } catch(e) {}
 
         const list = document.getElementById('posts-list');
+        const filter = document.getElementById('category-filter');
+        const categories = ['Machine Learning Acceleration', 'Optimization'];
+        const requestedCategory = new URLSearchParams(window.location.search).get('category');
+        let activeCategory = categories.includes(requestedCategory) ? requestedCategory : 'All';
 
         if (!sitePosts || sitePosts.length === 0) {
             list.innerHTML = '<p style="color:#888;padding:1rem 0">No posts yet.</p>';
         } else {
             const sorted = [...sitePosts].sort((a, b) => new Date(b.date) - new Date(a.date));
-            list.innerHTML = sorted.map(post => {
+
+            function renderCategoryFilter() {
+                filter.innerHTML = ['All', ...categories].map(category => `
+                    <button
+                        type="button"
+                        class="post-category-button${category === activeCategory ? ' active' : ''}"
+                        data-category="${category}"
+                        aria-pressed="${category === activeCategory}"
+                    >${category}</button>
+                `).join('');
+            }
+
+            function renderPosts() {
+                const visiblePosts = activeCategory === 'All'
+                    ? sorted
+                    : sorted.filter(post => post.category === activeCategory);
+
+                if (visiblePosts.length === 0) {
+                    list.innerHTML = `<div class="post-category-empty">No posts in ${activeCategory} yet.</div>`;
+                    return;
+                }
+
+                list.innerHTML = visiblePosts.map(post => {
                 const dateStr = new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', {
                     year: 'numeric', month: 'short', day: 'numeric'
                 });
@@ -60,12 +88,32 @@
                 <div class="af-post-item">
                     <div class="af-post-date">${dateStr}</div>
                     <div class="af-post-body">
+                        <div class="af-post-category">${post.category || 'Uncategorized'}</div>
                         <a href="post.html?slug=${post.slug}" class="af-post-title">${post.title}</a>
                         ${post.description ? `<div class="af-post-desc">${post.description}</div>` : ''}
                         <div class="af-post-tags">${tags}</div>
                     </div>
                 </div>`;
-            }).join('');
+                }).join('');
+            }
+
+            filter.addEventListener('click', event => {
+                const button = event.target.closest('[data-category]');
+                if (!button) return;
+                activeCategory = button.dataset.category;
+                const url = new URL(window.location.href);
+                if (activeCategory === 'All') {
+                    url.searchParams.delete('category');
+                } else {
+                    url.searchParams.set('category', activeCategory);
+                }
+                window.history.replaceState({}, '', url);
+                renderCategoryFilter();
+                renderPosts();
+            });
+
+            renderCategoryFilter();
+            renderPosts();
         }
     </script>
 </body>

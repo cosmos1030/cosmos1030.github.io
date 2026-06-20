@@ -35,6 +35,7 @@ for filename in sorted(os.listdir(POSTS_DIR)):
         "slug":        slug,
         "title":       meta.get("title", slug),
         "date":        meta.get("date", ""),
+        "category":    meta.get("category", "Uncategorized"),
         "description": meta.get("description", ""),
         "tags":        meta.get("tags", []),
     })
