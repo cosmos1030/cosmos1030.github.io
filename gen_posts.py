@@ -49,7 +49,7 @@ category_order = {
 posts.sort(key=lambda p: (
     -int(p["date"].replace("-", "") or 0),
     category_order.get(p["category"], 999),
-    p["order"],
+    -p["order"],
     p["title"],
 ))
 

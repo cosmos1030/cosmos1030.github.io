@@ -60,7 +60,7 @@
             const sorted = [...sitePosts].sort((a, b) =>
                 new Date(b.date) - new Date(a.date)
                 || (categoryRank[a.category] ?? 999) - (categoryRank[b.category] ?? 999)
-                || (a.order ?? 999) - (b.order ?? 999)
+                || (b.order ?? -1) - (a.order ?? -1)
                 || a.title.localeCompare(b.title)
             );
 
