@@ -2,6 +2,7 @@
 title: Quadratic and Conic Optimization: QP, Least Squares, and SOCP
 date: 2026-06-20
 category: Optimization
+order: 2
 tags: [quadratic programming, SOCP, convex optimization]
 description: A detailed guide to convex quadratic programs, equality-constrained least squares, KKT systems, second-order cones, and robust reformulations.
 ---

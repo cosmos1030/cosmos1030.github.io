@@ -2,6 +2,7 @@
 title: Duality, Augmented Lagrangians, and ADMM
 date: 2026-06-20
 category: Optimization
+order: 7
 tags: [duality, ADMM, constrained optimization]
 description: A detailed guide to Lagrangian duality, dual gradient ascent, augmented Lagrangians, the method of multipliers, and ADMM splitting.
 ---

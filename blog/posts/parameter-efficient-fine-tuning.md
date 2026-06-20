@@ -2,6 +2,7 @@
 title: Parameter-Efficient Fine-Tuning: LoRA, ReFT, and Efficient Backpropagation
 date: 2026-06-20
 category: Machine Learning Acceleration
+order: 3
 tags: [PEFT, LoRA, fine-tuning]
 description: An in-depth guide to low-rank adaptation, representation fine-tuning, multi-concept customization, and low-precision training optimization.
 ---

@@ -2,6 +2,7 @@
 title: Autoregressive Image Models: From VAE and VQ-VAE to Fast Decoding
 date: 2026-06-20
 category: Machine Learning Acceleration
+order: 4
 tags: [autoregressive models, VQ-VAE, image generation]
 description: A detailed study of latent image tokenization, DALL-E-style generation, continuous tokens, and grouped speculative decoding.
 ---

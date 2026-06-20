@@ -2,6 +2,7 @@
 title: Hardware Acceleration: Roofline Analysis, CNN Dataflow, and Systolic Arrays
 date: 2026-06-20
 category: Machine Learning Acceleration
+order: 10
 tags: [hardware acceleration, TPU, roofline]
 description: A detailed study of data movement, roofline analysis, convolution loop mapping, local memory, systolic arrays, HBM, and numerical formats.
 ---

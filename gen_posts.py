@@ -36,11 +36,22 @@ for filename in sorted(os.listdir(POSTS_DIR)):
         "title":       meta.get("title", slug),
         "date":        meta.get("date", ""),
         "category":    meta.get("category", "Uncategorized"),
+        "order":       int(meta.get("order", 999)),
         "description": meta.get("description", ""),
         "tags":        meta.get("tags", []),
     })
 
-posts.sort(key=lambda p: p["date"], reverse=True)
+category_order = {
+    "Machine Learning Acceleration": 0,
+    "Optimization": 1,
+}
+
+posts.sort(key=lambda p: (
+    -int(p["date"].replace("-", "") or 0),
+    category_order.get(p["category"], 999),
+    p["order"],
+    p["title"],
+))
 
 with open(OUTPUT, "w", encoding="utf-8") as f:
     f.write("const sitePosts = ")

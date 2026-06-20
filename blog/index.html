@@ -56,7 +56,13 @@
         if (!sitePosts || sitePosts.length === 0) {
             list.innerHTML = '<p style="color:#888;padding:1rem 0">No posts yet.</p>';
         } else {
-            const sorted = [...sitePosts].sort((a, b) => new Date(b.date) - new Date(a.date));
+            const categoryRank = Object.fromEntries(categories.map((category, index) => [category, index]));
+            const sorted = [...sitePosts].sort((a, b) =>
+                new Date(b.date) - new Date(a.date)
+                || (categoryRank[a.category] ?? 999) - (categoryRank[b.category] ?? 999)
+                || (a.order ?? 999) - (b.order ?? 999)
+                || a.title.localeCompare(b.title)
+            );
 
             function renderCategoryFilter() {
                 filter.innerHTML = ['All', ...categories].map(category => `

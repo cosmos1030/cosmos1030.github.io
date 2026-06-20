@@ -2,6 +2,7 @@
 title: Neural Architecture Search: From RL Controllers to Once-for-All Networks
 date: 2026-06-20
 category: Machine Learning Acceleration
+order: 2
 tags: [NAS, AutoML, model optimization]
 description: A detailed guide to architecture search spaces, RL-based NAS, weight sharing, DARTS, Once-for-All networks, and predictor-based evaluation.
 ---

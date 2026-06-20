@@ -2,6 +2,7 @@
 title: CNN Architecture Evolution: From AlexNet to MobileNet
 date: 2026-06-20
 category: Machine Learning Acceleration
+order: 1
 tags: [CNN, computer vision, efficient deep learning]
 description: A detailed study of how CNN design evolved from accuracy-driven architectures to residual learning and hardware-aware mobile networks.
 ---

@@ -2,6 +2,7 @@
 title: Semidefinite Programming: Matrix Inequalities and Convex Relaxation
 date: 2026-06-20
 category: Optimization
+order: 3
 tags: [semidefinite programming, convex relaxation, MAXCUT]
 description: A detailed introduction to PSD matrices, linear matrix inequalities, SDP, Schur complements, and the MAXCUT semidefinite relaxation.
 ---

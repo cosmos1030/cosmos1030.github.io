@@ -2,6 +2,7 @@
 title: Newton and Quasi-Newton Methods: Curvature as a Coordinate System
 date: 2026-06-20
 category: Optimization
+order: 6
 tags: [Newton method, BFGS, second-order optimization]
 description: A detailed guide to Newton's method, damping, line search, quadratic convergence, BFGS, L-BFGS, and modern second-order approximations.
 ---

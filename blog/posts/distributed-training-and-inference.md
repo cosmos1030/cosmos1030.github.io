@@ -2,6 +2,7 @@
 title: Distributed Training and Inference for Large Models
 date: 2026-06-20
 category: Machine Learning Acceleration
+order: 8
 tags: [distributed training, LLM, parallelism]
 description: A detailed guide to data, tensor, and pipeline parallelism, sharded state, checkpointing, mixed precision, and disaggregated inference.
 ---

@@ -2,6 +2,7 @@
 title: Neural Network Quantization: From Binary Networks to LLM Weight-Only Methods
 date: 2026-06-20
 category: Machine Learning Acceleration
+order: 6
 tags: [quantization, model compression, LLM]
 description: An in-depth guide to quantization error, QAT and PTQ, mixed precision, activation outliers, GPTQ, SmoothQuant, AWQ, and weight-only inference.
 ---

@@ -2,6 +2,7 @@
 title: Linear Programming and the Simplex Method
 date: 2026-06-20
 category: Optimization
+order: 1
 tags: [linear programming, simplex, convex optimization]
 description: A geometric and algebraic guide to linear programs, standard form, slack variables, basic feasible solutions, pivots, and simplex optimality.
 ---

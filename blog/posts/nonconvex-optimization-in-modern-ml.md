@@ -2,6 +2,7 @@
 title: Nonconvex Optimization in Modern Machine Learning
 date: 2026-06-20
 category: Optimization
+order: 9
 tags: [nonconvex optimization, machine learning, research]
 description: How duality, ADMM, second-order geometry, and coordinate transformations appear in continual learning, pruning, sharpness-aware training, and pipelines.
 ---

@@ -2,6 +2,7 @@
 title: Momentum and Adaptive Optimizers: From Nesterov to AdamW
 date: 2026-06-20
 category: Optimization
+order: 5
 tags: [momentum, Adam, adaptive optimization]
 description: A detailed comparison of momentum, Nesterov acceleration, AdaGrad, RMSProp, Adam, AdamW, and memory-efficient optimizer variants.
 ---

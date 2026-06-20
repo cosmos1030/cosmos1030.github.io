@@ -2,6 +2,7 @@
 title: Understanding the GPU and CUDA Execution Model
 date: 2026-06-20
 category: Machine Learning Acceleration
+order: 7
 tags: [GPU, CUDA, parallel computing]
 description: A detailed guide to SIMT execution, warps, occupancy, memory coalescing, tiling, and the performance principles behind CUDA kernels.
 ---

@@ -2,6 +2,7 @@
 title: Gradient Descent: Smoothness, Convexity, and Convergence
 date: 2026-06-20
 category: Optimization
+order: 4
 tags: [gradient descent, convex optimization, convergence]
 description: A rigorous guide to gradient descent, smoothness, convexity, strong convexity, convergence rates, and the geometry of conditioning.
 ---

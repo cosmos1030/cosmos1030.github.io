@@ -2,6 +2,7 @@
 title: Diffusion Models: Denoising, Score Matching, and Fast Sampling
 date: 2026-06-20
 category: Machine Learning Acceleration
+order: 5
 tags: [diffusion, generative models, model acceleration]
 description: A detailed guide to DDPMs, score-based diffusion, guidance, numerical solvers, quantization, distillation, and temporal feature reuse.
 ---

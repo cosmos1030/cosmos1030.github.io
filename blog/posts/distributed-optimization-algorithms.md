@@ -2,6 +2,7 @@
 title: Distributed Optimization: Local SGD, Consensus, and Communication
 date: 2026-06-20
 category: Optimization
+order: 8
 tags: [distributed optimization, federated learning, consensus]
 description: A detailed guide to parallel SGD, local SGD, FedAvg, decentralized optimization, topology, compression, asynchrony, and robust aggregation.
 ---

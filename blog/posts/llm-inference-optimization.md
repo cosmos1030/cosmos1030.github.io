@@ -2,6 +2,7 @@
 title: LLM Inference Optimization: Attention, KV Caches, and Speculative Decoding
 date: 2026-06-20
 category: Machine Learning Acceleration
+order: 9
 tags: [LLM, inference, FlashAttention]
 description: An in-depth study of FlashAttention, PagedAttention, GQA, RoPE, MLA, and exact speculative decoding for efficient LLM serving.
 ---
