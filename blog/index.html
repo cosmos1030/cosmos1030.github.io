@@ -49,7 +49,7 @@
 
         const list = document.getElementById('posts-list');
         const filter = document.getElementById('category-filter');
-        const categories = ['Machine Learning Acceleration', 'Optimization'];
+        const categories = ['Machine Learning Acceleration', 'Optimization', 'Reinforcement Learning'];
         const requestedCategory = new URLSearchParams(window.location.search).get('category');
         let activeCategory = categories.includes(requestedCategory) ? requestedCategory : 'All';
 

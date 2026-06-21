@@ -524,6 +524,83 @@
         reset();
     }
 
+    function trustRegionDemo(host) {
+        const { canvas, controls } = createShell(
+            host,
+            'Euclidean vs. natural policy gradient',
+            'The ellipse is a local KL ball. Change its radius and Fisher anisotropy to compare two ascent directions under the same KL budget.'
+        );
+        const ctx = canvas.getContext('2d');
+        const center = { x: 360, y: 180 };
+        const scale = 225;
+        const gradient = { x: 1, y: 0.72 };
+        let delta = 0.08;
+        let anisotropy = 7;
+
+        function boundaryStep(direction) {
+            const fisherNorm = direction.x ** 2 + anisotropy * direction.y ** 2;
+            const factor = Math.sqrt(2 * delta / fisherNorm);
+            return { x: factor * direction.x, y: factor * direction.y };
+        }
+
+        function point(step) {
+            return { x: center.x + step.x * scale, y: center.y - step.y * scale };
+        }
+
+        function arrow(step, color, label, offset) {
+            const end = point(step);
+            const angle = Math.atan2(end.y - center.y, end.x - center.x);
+            ctx.beginPath(); ctx.moveTo(center.x, center.y); ctx.lineTo(end.x, end.y);
+            ctx.strokeStyle = color; ctx.lineWidth = 3; ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(end.x, end.y);
+            ctx.lineTo(end.x - 11 * Math.cos(angle - .45), end.y - 11 * Math.sin(angle - .45));
+            ctx.lineTo(end.x - 11 * Math.cos(angle + .45), end.y - 11 * Math.sin(angle + .45));
+            ctx.closePath(); ctx.fillStyle = color; ctx.fill();
+            ctx.font = '600 12px Inter, sans-serif'; ctx.textAlign = 'left';
+            ctx.fillText(label, end.x + 8, end.y + offset);
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, 720, 360);
+            ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, 720, 360);
+            ctx.strokeStyle = COLORS.grid; ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(70, center.y); ctx.lineTo(650, center.y); ctx.moveTo(center.x, 35); ctx.lineTo(center.x, 325); ctx.stroke();
+
+            const radiusX = Math.sqrt(2 * delta) * scale;
+            const radiusY = Math.sqrt(2 * delta / anisotropy) * scale;
+            for (const factor of [1, .66, .33]) {
+                ctx.beginPath();
+                ctx.ellipse(center.x, center.y, radiusX * factor, radiusY * factor, 0, 0, Math.PI * 2);
+                ctx.fillStyle = factor === 1 ? 'rgba(79,70,229,.055)' : 'transparent';
+                ctx.fill();
+                ctx.strokeStyle = factor === 1 ? 'rgba(79,70,229,.65)' : 'rgba(79,70,229,.16)';
+                ctx.lineWidth = factor === 1 ? 2 : 1;
+                ctx.stroke();
+            }
+
+            const euclidean = boundaryStep(gradient);
+            const naturalDirection = { x: gradient.x, y: gradient.y / anisotropy };
+            const natural = boundaryStep(naturalDirection);
+            arrow(euclidean, COLORS.rose, 'gradient', 17);
+            arrow(natural, COLORS.violet, 'natural gradient', -8);
+
+            ctx.beginPath(); ctx.arc(center.x, center.y, 5, 0, Math.PI * 2);
+            ctx.fillStyle = COLORS.ink; ctx.fill();
+            ctx.fillStyle = COLORS.muted; ctx.font = '12px Inter, sans-serif';
+            ctx.fillText('old policy', center.x + 9, center.y + 17);
+
+            const gainE = gradient.x * euclidean.x + gradient.y * euclidean.y;
+            const gainN = gradient.x * natural.x + gradient.y * natural.y;
+            metric.textContent = `KL radius ${delta.toFixed(2)} · predicted gain: gradient ${gainE.toFixed(3)}, natural ${gainN.toFixed(3)}`;
+        }
+
+        addRange(controls, 'KL radius', 0.01, 0.2, 0.01, delta, value => { delta = value; draw(); });
+        addRange(controls, 'anisotropy', 1, 12, 1, anisotropy, value => { anisotropy = value; draw(); });
+        const metric = addMetric(controls);
+        draw();
+    }
+
     const demos = {
         'optimizer-gd': host => optimizerDemo(host, 'gd'),
         'optimizer-momentum': host => optimizerDemo(host, 'momentum'),
@@ -532,6 +609,7 @@
         diffusion: diffusionDemo,
         consensus: consensusDemo,
         convolution: convolutionDemo,
+        'trust-region': trustRegionDemo,
     };
 
     window.initializeInteractivePost = function (root) {

@@ -1,5 +1,18 @@
 const sitePosts = [
     {
+        "slug": "trust-region-policy-optimization",
+        "title": "Trust Region Policy Optimization: A Step-by-Step Derivation",
+        "date": "2026-06-21",
+        "category": "Reinforcement Learning",
+        "order": 1,
+        "description": "A detailed derivation of TRPO, from policy-gradient distribution shift to KL trust regions, natural gradients, conjugate gradient, and PPO.",
+        "tags": [
+            "TRPO",
+            "policy gradient",
+            "reinforcement learning"
+        ]
+    },
+    {
         "slug": "hardware-acceleration-roofline-tpu",
         "title": "Hardware Acceleration: Roofline Analysis, CNN Dataflow, and Systolic Arrays",
         "date": "2026-06-20",

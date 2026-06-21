@@ -44,6 +44,7 @@ for filename in sorted(os.listdir(POSTS_DIR)):
 category_order = {
     "Machine Learning Acceleration": 0,
     "Optimization": 1,
+    "Reinforcement Learning": 2,
 }
 
 posts.sort(key=lambda p: (
