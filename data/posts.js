@@ -1,5 +1,18 @@
 const sitePosts = [
     {
+        "slug": "vptq-vector-post-training-quantization",
+        "title": "VPTQ: Extreme Low-Bit Vector Quantization for Large Language Models",
+        "date": "2026-06-21",
+        "category": "Machine Learning Acceleration",
+        "order": 11,
+        "description": "How VPTQ combines vector codebooks, second-order error correction, residual quantization, and outlier handling for practical 2-bit LLM deployment.",
+        "tags": [
+            "VPTQ",
+            "vector quantization",
+            "LLM compression"
+        ]
+    },
+    {
         "slug": "trust-region-policy-optimization",
         "title": "Trust Region Policy Optimization: A Step-by-Step Derivation",
         "date": "2026-06-21",

@@ -601,6 +601,156 @@
         draw();
     }
 
+    function vectorQuantizationDemo(host) {
+        const { canvas, controls } = createShell(
+            host,
+            'Scalar grid vs. learned vector codebook',
+            'Both panels use the same number of codewords. Scalar centroids are locked to a grid; VQ centroids move toward the observed 2D weight clusters.'
+        );
+        const ctx = canvas.getContext('2d');
+        let codebookSize = 16;
+        let outlierCount = 4;
+
+        function hash(i) {
+            const value = Math.sin(i * 91.73 + 17.19) * 43758.5453;
+            return value - Math.floor(value);
+        }
+
+        function makePoints() {
+            const centers = [[-.76, -.28], [-.2, .64], [.4, -.58], [.73, .34]];
+            const points = [];
+            for (let i = 0; i < 128; i++) {
+                const center = centers[i % centers.length];
+                points.push({
+                    x: center[0] + (hash(i * 3) - .5) * .34,
+                    y: center[1] + (hash(i * 3 + 1) - .5) * .3,
+                });
+            }
+            for (let i = 0; i < outlierCount; i++) {
+                points.push({
+                    x: (i % 2 ? 1 : -1) * (1.03 + hash(500 + i) * .2),
+                    y: (hash(700 + i) - .5) * 2.2,
+                });
+            }
+            return points;
+        }
+
+        function distance(a, b) {
+            return (a.x - b.x) ** 2 + (a.y - b.y) ** 2;
+        }
+
+        function fitCodebook(points) {
+            let centroids = Array.from({ length: codebookSize }, (_, i) => ({
+                ...points[Math.floor(i * points.length / codebookSize)]
+            }));
+            for (let iteration = 0; iteration < 12; iteration++) {
+                const sums = centroids.map(() => ({ x: 0, y: 0, n: 0 }));
+                points.forEach(point => {
+                    let best = 0;
+                    for (let j = 1; j < centroids.length; j++) {
+                        if (distance(point, centroids[j]) < distance(point, centroids[best])) best = j;
+                    }
+                    sums[best].x += point.x;
+                    sums[best].y += point.y;
+                    sums[best].n++;
+                });
+                centroids = centroids.map((centroid, i) => sums[i].n
+                    ? { x: sums[i].x / sums[i].n, y: sums[i].y / sums[i].n }
+                    : centroid
+                );
+            }
+            return centroids;
+        }
+
+        function scalarCodebook() {
+            const levelCount = Math.round(Math.sqrt(codebookSize));
+            const levels = Array.from({ length: levelCount }, (_, i) =>
+                -1.15 + i * 2.3 / (levelCount - 1)
+            );
+            return levels.flatMap(x => levels.map(y => ({ x, y })));
+        }
+
+        function reconstructionError(points, centroids) {
+            return points.reduce((sum, point) => {
+                let best = Infinity;
+                centroids.forEach(centroid => {
+                    best = Math.min(best, distance(point, centroid));
+                });
+                return sum + best;
+            }, 0) / points.length;
+        }
+
+        function drawPanel(points, centroids, left, title) {
+            const top = 58;
+            const width = 300;
+            const height = 260;
+            const map = point => ({
+                x: left + width / 2 + point.x * 105,
+                y: top + height / 2 - point.y * 105,
+            });
+            ctx.fillStyle = '#fbfaff';
+            ctx.fillRect(left, top, width, height);
+            ctx.strokeStyle = '#e2e0ef';
+            ctx.strokeRect(left, top, width, height);
+            ctx.beginPath();
+            ctx.moveTo(left, top + height / 2);
+            ctx.lineTo(left + width, top + height / 2);
+            ctx.moveTo(left + width / 2, top);
+            ctx.lineTo(left + width / 2, top + height);
+            ctx.stroke();
+            points.forEach(point => {
+                const p = map(point);
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(30,41,59,.38)';
+                ctx.fill();
+            });
+            centroids.forEach(centroid => {
+                const p = map(centroid);
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, codebookSize > 16 ? 3.5 : 5, 0, Math.PI * 2);
+                ctx.fillStyle = COLORS.violet;
+                ctx.fill();
+                ctx.strokeStyle = '#fff';
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+            });
+            ctx.fillStyle = COLORS.ink;
+            ctx.font = '700 13px Inter, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(title, left, 38);
+        }
+
+        function draw() {
+            const points = makePoints();
+            const scalar = scalarCodebook();
+            const vector = fitCodebook(points);
+            ctx.clearRect(0, 0, 720, 360);
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(0, 0, 720, 360);
+            drawPanel(points, scalar, 35, 'Scalar quantization');
+            drawPanel(points, vector, 385, 'Vector quantization');
+            const scalarMse = reconstructionError(points, scalar);
+            const vectorMse = reconstructionError(points, vector);
+            metric.textContent = `${Math.log2(codebookSize) / 2} bits/weight · scalar MSE ${scalarMse.toFixed(3)} · VQ MSE ${vectorMse.toFixed(3)}`;
+        }
+
+        addSelect(controls, 'codebook', [
+            { value: '4', label: '4 vectors (1 bit/weight)' },
+            { value: '16', label: '16 vectors (2 bits/weight)' },
+            { value: '64', label: '64 vectors (3 bits/weight)' },
+        ], String(codebookSize), value => {
+            codebookSize = Number(value);
+            draw();
+        });
+        addRange(controls, 'outliers', 0, 12, 1, outlierCount, value => {
+            outlierCount = value;
+            draw();
+        });
+        const metric = addMetric(controls);
+        draw();
+    }
+
     const demos = {
         'optimizer-gd': host => optimizerDemo(host, 'gd'),
         'optimizer-momentum': host => optimizerDemo(host, 'momentum'),
@@ -610,6 +760,7 @@
         consensus: consensusDemo,
         convolution: convolutionDemo,
         'trust-region': trustRegionDemo,
+        'vector-quantization': vectorQuantizationDemo,
     };
 
     window.initializeInteractivePost = function (root) {
