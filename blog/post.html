@@ -6,7 +6,7 @@
     <title>Post - Doyoon Kim</title>
     <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="blog.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
 </head>
 <body>
+    <div class="post-reading-progress" id="post-reading-progress" aria-hidden="true"></div>
     <header class="af-header">
         <div class="af-social" id="af-social"></div>
         <nav class="af-nav">
@@ -48,6 +49,7 @@
     </footer>
 
     <script src="../data/personal.js?v=2"></script>
+    <script src="interactions.js?v=1"></script>
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const { email, linkedin, github, scholar } = sitePersonalInfo.contact;
@@ -83,6 +85,9 @@
             const stash = [];
 
             const stashed = markdown
+                .replace(/\{\{interactive:([a-z0-9-]+)\}\}/gi, (_, type) =>
+                    `<div class="interactive-demo" data-demo="${type}"></div>`
+                )
                 .replace(/\$\$([\s\S]*?)\$\$/g, (_, math) => {
                     stash.push({ display: true, math: math.trim() });
                     return `@@MATH${stash.length - 1}@@`;
@@ -141,15 +146,26 @@
                 const content = renderWithMath(body);
 
                 container.innerHTML = `
-                    <div class="post-meta">
-                        <a href="index.html?category=${encodeURIComponent(category)}" class="post-category">${category}</a>
-                        <div class="post-tags">${tags}</div>
-                        <h1>${meta.title || slug}</h1>
-                        <span class="post-date">${date}</span>
+                    <div class="post-layout">
+                        <aside class="post-toc" aria-label="Table of contents">
+                            <div class="post-toc-inner">
+                                <div class="post-toc-title">On this page</div>
+                                <nav id="post-toc-nav"></nav>
+                            </div>
+                        </aside>
+                        <article class="post-article">
+                            <div class="post-meta">
+                                <a href="index.html?category=${encodeURIComponent(category)}" class="post-category">${category}</a>
+                                <div class="post-tags">${tags}</div>
+                                <h1>${meta.title || slug}</h1>
+                                <span class="post-date">${date}</span>
+                            </div>
+                            <hr class="post-divider">
+                            <div class="post-content">${content}</div>
+                        </article>
                     </div>
-                    <hr class="post-divider">
-                    <div class="post-content">${content}</div>
                 `;
+                initializeInteractivePost(container, slug);
             } catch (e) {
                 container.innerHTML = `<p class="post-error">Could not load post "${slug}".</p>`;
             }

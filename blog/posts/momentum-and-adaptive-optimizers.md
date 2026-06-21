@@ -13,6 +13,8 @@ First-order algorithms access an objective through an oracle that returns functi
 
 Gradient descent achieves only $O(1/k)$. This gap shows that acceleration is possible, but it requires using gradient history more carefully than a simple current-gradient step.
 
+{{interactive:optimizer-momentum}}
+
 ## Polyak Momentum
 
 Momentum maintains a velocity:

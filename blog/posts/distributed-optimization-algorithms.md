@@ -24,6 +24,8 @@ There are two common regimes:
 
 The same update can behave very differently across these regimes.
 
+{{interactive:consensus}}
+
 ## Synchronous Parallel SGD
 
 At iteration $k$, every worker computes a stochastic gradient $g_i^k$ at the same parameter $x_k$. A server or collective averages them:

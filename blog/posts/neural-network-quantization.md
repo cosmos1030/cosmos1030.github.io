@@ -26,6 +26,8 @@ $$
 
 The scale $s$ controls level spacing, and zero point $z$ makes real zero exactly representable. Symmetric quantization usually fixes $z=0$ and is simpler for hardware; asymmetric quantization uses the integer range more efficiently for shifted distributions such as ReLU activations.
 
+{{interactive:quantization}}
+
 ## Rounding Error Versus Clipping Error
 
 Selecting the representable range creates a fundamental trade-off. A wide range includes outliers but increases the distance between neighboring levels, producing more rounding error for ordinary values. A narrow range improves resolution near zero but clips large values.

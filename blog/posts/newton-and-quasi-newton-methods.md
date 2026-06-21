@@ -32,6 +32,8 @@ $$
 
 In practice, one solves the linear system rather than explicitly computing an inverse.
 
+{{interactive:optimizer-newton}}
+
 ## Curvature Corrects the Gradient
 
 The gradient measures slope but not the units or curvature of each coordinate. Newton's step scales an eigen-direction with curvature $\lambda_i$ by $1/\lambda_i$. Steep directions receive small steps and flat directions receive large steps.

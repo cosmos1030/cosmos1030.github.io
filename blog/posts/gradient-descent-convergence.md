@@ -52,6 +52,8 @@ $$
 
 Smoothness does not say the problem is easy or convex. It only limits how rapidly the gradient can change.
 
+{{interactive:optimizer-gd}}
+
 ## What Can Be Guaranteed Without Convexity?
 
 Suppose $f$ is smooth and bounded below by $f_{inf}$. Summing the descent inequality over $T$ steps yields

@@ -18,6 +18,8 @@ The history of convolutional neural networks is often presented as a list of mod
 
 ImageNet and ILSVRC made these questions measurable. A model trained on ImageNet was also useful beyond classification because its learned features could be transferred to detection, segmentation, and other downstream tasks.
 
+{{interactive:convolution}}
+
 ## AlexNet: The Large-Scale CNN Breakthrough
 
 AlexNet demonstrated that a large CNN trained on GPUs could decisively outperform traditional vision systems. Its architecture contained five convolutional layers followed by three fully connected layers. The first layer used a large $11\times11$ kernel with stride 4, while later layers moved toward smaller $5\times5$ and $3\times3$ kernels.

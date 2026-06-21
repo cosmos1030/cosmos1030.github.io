@@ -32,6 +32,8 @@ $$
 
 For a long enough schedule, $x_T$ is close to standard Gaussian noise. Generation starts from this simple distribution and repeatedly denoises.
 
+{{interactive:diffusion}}
+
 ## Learning the Reverse Process
 
 The reverse transition is modeled as

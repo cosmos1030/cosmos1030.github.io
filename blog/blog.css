@@ -198,9 +198,78 @@ body {
 }
 
 .post-page-inner {
-    max-width: 760px;
+    max-width: 1120px;
     margin: 0 auto;
     padding: 3rem 2rem 5rem;
+}
+
+.post-reading-progress {
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 1100;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    transition: width 80ms linear;
+}
+
+.post-layout {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 760px);
+    gap: 3rem;
+    align-items: start;
+}
+
+.post-article {
+    min-width: 0;
+}
+
+.post-toc {
+    position: sticky;
+    top: 6rem;
+    max-height: calc(100vh - 8rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.post-toc-inner {
+    border-left: 1px solid var(--border-color);
+    padding-left: 1rem;
+}
+
+.post-toc-title {
+    margin-bottom: 0.65rem;
+    color: var(--text-primary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.post-toc a {
+    display: block;
+    padding: 0.25rem 0;
+    color: var(--text-light);
+    font-size: 0.78rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+    transition: color 160ms ease, transform 160ms ease;
+}
+
+.post-toc a[data-level="3"] {
+    padding-left: 0.75rem;
+    font-size: 0.74rem;
+}
+
+.post-toc a:hover,
+.post-toc a.active {
+    color: var(--primary-color);
+}
+
+.post-toc a.active {
+    font-weight: 600;
+    transform: translateX(3px);
 }
 
 .post-back {
@@ -372,6 +441,119 @@ body {
     background: var(--bg-secondary);
 }
 
+/* Interactive concept playgrounds */
+.interactive-demo {
+    margin: 2rem 0;
+    border: 1px solid #dddaf7;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #ffffff, #faf9ff);
+    box-shadow: 0 14px 35px rgb(79 70 229 / 0.08);
+    overflow: hidden;
+}
+
+.interactive-demo-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.15rem 0.8rem;
+}
+
+.interactive-demo-kicker {
+    margin-bottom: 0.2rem;
+    color: var(--primary-color);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.interactive-demo-title {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.interactive-demo-copy {
+    margin-top: 0.25rem;
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.interactive-demo-stage {
+    position: relative;
+    padding: 0 1rem 0.8rem;
+}
+
+.interactive-demo canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #ebe9f7;
+    border-radius: 10px;
+    background: #fff;
+    touch-action: none;
+}
+
+.interactive-demo-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.7rem 1rem;
+    padding: 0.85rem 1.15rem 1.1rem;
+    border-top: 1px solid #ebe9f7;
+    background: rgb(248 247 255 / 0.75);
+}
+
+.interactive-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.interactive-control input[type="range"] {
+    width: 120px;
+    accent-color: var(--primary-color);
+}
+
+.interactive-control select,
+.interactive-demo button {
+    border: 1px solid #d9d6ef;
+    border-radius: 7px;
+    background: #fff;
+    color: var(--text-primary);
+    font: inherit;
+}
+
+.interactive-control select {
+    padding: 0.35rem 0.5rem;
+}
+
+.interactive-demo button {
+    padding: 0.42rem 0.7rem;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 700;
+    transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.interactive-demo button:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.interactive-metric {
+    margin-left: auto;
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    font-variant-numeric: tabular-nums;
+}
+
 /* KaTeX display math centering */
 .post-content .katex-display {
     overflow-x: auto;
@@ -407,11 +589,56 @@ body {
         padding: 2rem 1rem 4rem;
     }
 
+    .post-layout {
+        display: block;
+    }
+
+    .post-toc {
+        position: static;
+        max-height: none;
+        margin-bottom: 2rem;
+    }
+
+    .post-toc-inner {
+        padding: 0.85rem 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        background: #fff;
+    }
+
+    .post-toc nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 0.8rem;
+    }
+
+    .post-toc a[data-level="3"] {
+        display: none;
+    }
+
     .post-meta h1 {
         font-size: 1.75rem;
     }
 
     .post-content {
         font-size: 1rem;
+    }
+
+    .interactive-demo-controls {
+        align-items: flex-start;
+    }
+
+    .interactive-control {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .interactive-control input[type="range"] {
+        flex: 1;
+    }
+
+    .interactive-metric {
+        width: 100%;
+        margin-left: 0;
     }
 }
